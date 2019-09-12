@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="utf-8">
+  
+
+  
+  <title>学习笔记 | Jo ラングレー</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="##笔记 千锋教育 李卫民2018 06版 ####servlet  特性：单实例多线程 有访问时，服务器创建servlet，调用init-&amp;gt;service-&amp;gt;destory servlet生命周期：1、加载：加载servlet的class，实例化servlet(1次)2、初始化：servlet调用init()的方法3、响应请求：调用service的方法(多次)处理doGet和doPo">
+<meta property="og:type" content="article">
+<meta property="og:title" content="学习笔记">
+<meta property="og:url" content="http://yoursite.com/2019/09/03/学习笔记/index.html">
+<meta property="og:site_name" content="Jo ラングレー">
+<meta property="og:description" content="##笔记 千锋教育 李卫民2018 06版 ####servlet  特性：单实例多线程 有访问时，服务器创建servlet，调用init-&amp;gt;service-&amp;gt;destory servlet生命周期：1、加载：加载servlet的class，实例化servlet(1次)2、初始化：servlet调用init()的方法3、响应请求：调用service的方法(多次)处理doGet和doPo">
+<meta property="og:locale" content="cn">
+<meta property="og:updated_time" content="2019-09-11T02:49:44.154Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="学习笔记">
+<meta name="twitter:description" content="##笔记 千锋教育 李卫民2018 06版 ####servlet  特性：单实例多线程 有访问时，服务器创建servlet，调用init-&amp;gt;service-&amp;gt;destory servlet生命周期：1、加载：加载servlet的class，实例化servlet(1次)2、初始化：servlet调用init()的方法3、响应请求：调用service的方法(多次)处理doGet和doPo">
+  
+    <link rel="alternate" href="/atom.xml" title="Jo ラングレー" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+</html>
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Jo ラングレー</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/03/学习笔记/" class="article-date">
+  <time datetime="2019-09-03T15:05:01.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      学习笔记
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##笔记 千锋教育 李卫民2018 06版</p>
+<p>####servlet</p>
+<ul>
+<li>特性：单实例多线程</li>
+<li>有访问时，服务器创建servlet，调用init-&gt;service-&gt;destory</li>
+<li>servlet生命周期：<br>1、加载：加载servlet的class，实例化servlet(1次)<br>2、初始化：servlet调用init()的方法<br>3、响应请求：调用service的方法(多次)处理doGet和doPost等<br>4、容器关闭时候调用destroy销毁方法(1次)</li>
+</ul>
+<hr>
+<h4 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h4><p>功能概括：构建、清理、打包 idea的Terminal命令：mvn build/clean/packge<br>中央仓库<br>POM<br>groupID：组织名 团队名<br>artifactID：项目名<br>语义化version规则：1.1.1 = 架构.功能.bugFix<br>快照版：固定-snapshot 自动生成日期版本号，这样依赖模块时就不必经常改版本号了  </p>
+<p>项目骨架：create from archetype：项目的封装，继承，多态。基于骨架创建项目。比如连接数据库。</p>
+<hr>
+<h4 id="maven项目-jsp-controller-service-dao"><a href="#maven项目-jsp-controller-service-dao" class="headerlink" title="maven项目 jsp+controller+service+dao"></a>maven项目 jsp+controller+service+dao</h4><ul>
+<li>MVC三层结构：视图层web/view、业务逻辑层serivce、数据访问层dao</li>
+<li>三层结构概念，包含这三种即可，可加入其它包entity等</li>
+<li>实体类需要序列化：数据需要传输，转换成二进制</li>
+<li>Alt insert 快捷生成；记得重写toString();</li>
+<li>类注释：/** 回车 ，ctrl+/</li>
+<li>开发技巧：面向过程，想到哪写到哪，然后进行重构！哈哈 比如登录方法返回String还是boolean（不要过度设计）</li>
+<li>dao层写接口，dao层里面新增impl 樱剖，继承接口写方法，Alt+Enter呼出</li>
+<li>commons整个项目通用；web下面：controller(servlet),filter,utils(针对web的工具类)，呼应了概念：高内聚，低耦合</li>
+<li>doGet doPost：<br>表面区别：明文、参数大小限制4Kb、可否传文件 POST是流传输<br>重要区别：  语义区别：get,获取数据；post，提交数据。2次请求，服务器能不能接收数据，可以的话才会传输。<br>幂等性：POST不具备幂等性。涉及 RestfulAPI。</li>
+</ul>
+<p>-代码技巧：对象+.+参数/方法+.var<br>-代码技巧：统一替换变量：双击：shift+F6<br>-代码技巧：代码格式化 ctrl+alt+L；注释和代码不可以在同一行。</p>
+<hr>
+<h4 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h4><ul>
+<li>学习简单框架：1天之内上手。</li>
+<li>复杂的框架或技术：3天之内上手。区块链也是可以3天之内入门的，入门不是指懂底层会解决方案，要会使用！！！</li>
+<li>来自Twitter，基于HTML CSS JavaScript。一个CSS/HTML框架。对于项目来说相当于一个插件plugins</li>
+<li>JQuery：一个JavaScript框架。简化JS开发，也是JS的新一代标准。</li>
+<li>概念：<br>技术选型：选择何种框架<br>1、框架的搜索量：搜索引擎-百度指数-添加对比词<br>2、bootstrap vue国人个人开发 angularjs谷歌开发<br>3、社区活跃度：涉及文档完备性，上GitHub，看收藏，也就是栈，超过1W就很厉害了。关注ISSUES<br>4、是否开源  </li>
+</ul>
+<h5 id="bootstrap表格"><a href="#bootstrap表格" class="headerlink" title="bootstrap表格"></a>bootstrap表格</h5><ul>
+<li>table :thead tbody tfoot  </li>
+<li>代码技巧：ctrl+W 按层级选中</li>
+<li>新建assets，新建plugins，贴bootstrap和js。新建自己的images，css，js</li>
+<li>新建h5文件。引入css theme.css js jQuery</li>
+<li>最大亮点：网格系统 Grid 说人话：定位的，布局的</li>
+<li>渐进增强：向上兼容 优雅降级：向下兼容</li>
+<li>页面布局演变：table布局-&gt;div+css-&gt;Grid网格布局<br>区别：表格布局问题:表格内容加载完毕才显示；div+css：代码从上往下执行，可以顺序加载；但调试难度大。<h5 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h5></li>
+<li>微软雅黑：一个字体一万，一万个字……字体是矢量的，无论放大缩小都不会失真。</li>
+<li>矢量图：不失真。</li>
+<li>为什么网站要图标：用户体验；概念：产品自己本身会说话。</li>
+<li>常用字体库/图标推荐：FontAwesome LineAwesome 符合现代气息，线性图标 socicon更符合现代气息</li>
+<li>Iconfont阿里巴巴矢量库</li>
+</ul>
+<h4 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h4><ul>
+<li>代码技巧： ==比较的地址 equals值 </li>
+<li>时间戳 类名 方法名 第几行 报错详情</li>
+</ul>
+<h4 id="spring特点"><a href="#spring特点" class="headerlink" title="spring特点"></a>spring特点</h4><ul>
+<li>非侵入式：pojo：源生java对象。概念：spring框架的API不会在业务逻辑中出现，即业务逻辑是pojo，由于业务逻辑中没有spring的API，所以业务逻辑可以从Spring框架快速移植到其他框架，即与环境无关。&nbsp; </li>
+<li>侵入式举例：一个javaweb项目，用到servlet，用pom maven构建的时候，还要用到servlet的api，servlet继承了httpservlet，才能实现功能。代码中出现了包下面的类。</li>
+<li>耦合度：降低耦合，</li>
+<li>容器：Tomcat是servlet容器。</li>
+<li>IOC：控制反转。  指传统上由程序代码操控的对象调用权交给 容器，通过容器来实现对象的装配和管理。控制反转就是对 对象控制权的转移，从程序代码本身反转到了外部容器。  </li>
+<li>自己的理解： 容器启动时，本来是由代码new的对象的时机及控制权交到容器，容器运行到需要的地方进行创建与释放。内存管理，因为java有gc，只管创建不管释放，C++需要手动释放，容器会比gc更好一些，可以优化gc机制导致的额外消耗。</li>
+<li>依赖注入是目前最优秀的解耦方式。 new对象就是一种耦合，属于硬编码  </li>
+<li>解耦等于控制反转？控制反转是一种方式，达到了解耦的效果。</li>
+</ul>
+<p>两种实现方式：<br>1.依赖注入：DI，Dependcy<br><br><br>2.依赖查找：一般不用。JNDI。</p>
+<ul>
+<li>AOP：面向对象编程OOP的补充，面向切面编程。允许通过 分离应用的业务逻辑与系统级服务(例如日志和事务管理)来进行开发。 </li>
+</ul>
+<p>#1111</p>
+<p>#2222</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/03/学习笔记/" data-id="ck0ge1h3z00040oujqadbvgpe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2019/09/11/字节字符文件流的读与写/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          字节字符文件流的读与写
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2019/09/03/开发过程中的问题记录/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">开发过程中的问题记录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">September 2019</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">August 2019</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2019/09/11/字节字符文件流的读与写/">字节字符文件流的读与写</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/学习笔记/">学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/开发过程中的问题记录/">开发过程中的问题记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/springBoot-mybaitis-thymeleaf开发环境搭建/">springBoot+mybaitis+thymeleaf开发环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/技能树一览/">技能树一览</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2019 Junguo<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+
+
+  </div>
+</body>
+</html>

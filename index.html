@@ -62,6 +62,361 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-字节字符文件流的读与写" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/11/字节字符文件流的读与写/" class="article-date">
+  <time datetime="2019-09-11T15:51:59.000Z" itemprop="datePublished">2019-09-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/11/字节字符文件流的读与写/">字节字符文件流的读与写</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="分清字节流字符流涉及的类"><a href="#分清字节流字符流涉及的类" class="headerlink" title="分清字节流字符流涉及的类"></a>分清字节流字符流涉及的类</h2><h4 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h4><p>文件相关</p>
+<h4 id="InputStream-输入字节流"><a href="#InputStream-输入字节流" class="headerlink" title="InputStream 输入字节流"></a>InputStream 输入字节流</h4><p>衍生类<br></p>
+<ul>
+<li>FileInputStream<br></li>
+<li>ByteArrayInputstream<br></li>
+<li>FilterInputream<br></li>
+<li>ObjectInputStream<br></li>
+<li>PipedInputStream<br></li>
+<li>SequenceInputStream<br></li>
+</ul>
+<h4 id="OutputStream-输出字节流"><a href="#OutputStream-输出字节流" class="headerlink" title="OutputStream 输出字节流"></a>OutputStream 输出字节流</h4><ul>
+<li>FileOutputStram<br></li>
+<li>ByteArrayOutputStream<br></li>
+<li>FilterOutputStream<br></li>
+<li>ObjectOutputStream<br></li>
+<li>PipedOutputStream<br></li>
+</ul>
+<h4 id="Reader-输入字符流"><a href="#Reader-输入字符流" class="headerlink" title="Reader 输入字符流"></a>Reader 输入字符流</h4><ul>
+<li>BufferedReader</li>
+<li>CharArrayReader</li>
+<li>FilterReader</li>
+<li>InputStreamReader</li>
+<li>PipedStreamReader</li>
+<li>StringReader</li>
+</ul>
+<h4 id="Writer-输出字符流"><a href="#Writer-输出字符流" class="headerlink" title="Writer 输出字符流"></a>Writer 输出字符流</h4><ul>
+<li>BufferedWriter</li>
+<li>CharArrayWriter</li>
+<li>FilterWriter</li>
+<li>OutputStreamWriter</li>
+<li>PipedStreamWriter</li>
+<li>PrintWriter</li>
+<li>StringWriter</li>
+</ul>
+<p>关于字符流的特点：<br>每个字符流子类几乎都会有一个相对应的字节流子类，两者功能一样，差别只是在于操作的是字节还是字符</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/11/字节字符文件流的读与写/" data-id="ck0ge1h3w00020ouj0ddr7vwv" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-学习笔记" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/03/学习笔记/" class="article-date">
+  <time datetime="2019-09-03T15:05:01.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/03/学习笔记/">学习笔记</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##笔记 千锋教育 李卫民2018 06版</p>
+<p>####servlet</p>
+<ul>
+<li>特性：单实例多线程</li>
+<li>有访问时，服务器创建servlet，调用init-&gt;service-&gt;destory</li>
+<li>servlet生命周期：<br>1、加载：加载servlet的class，实例化servlet(1次)<br>2、初始化：servlet调用init()的方法<br>3、响应请求：调用service的方法(多次)处理doGet和doPost等<br>4、容器关闭时候调用destroy销毁方法(1次)</li>
+</ul>
+<hr>
+<h4 id="maven"><a href="#maven" class="headerlink" title="maven"></a>maven</h4><p>功能概括：构建、清理、打包 idea的Terminal命令：mvn build/clean/packge<br>中央仓库<br>POM<br>groupID：组织名 团队名<br>artifactID：项目名<br>语义化version规则：1.1.1 = 架构.功能.bugFix<br>快照版：固定-snapshot 自动生成日期版本号，这样依赖模块时就不必经常改版本号了  </p>
+<p>项目骨架：create from archetype：项目的封装，继承，多态。基于骨架创建项目。比如连接数据库。</p>
+<hr>
+<h4 id="maven项目-jsp-controller-service-dao"><a href="#maven项目-jsp-controller-service-dao" class="headerlink" title="maven项目 jsp+controller+service+dao"></a>maven项目 jsp+controller+service+dao</h4><ul>
+<li>MVC三层结构：视图层web/view、业务逻辑层serivce、数据访问层dao</li>
+<li>三层结构概念，包含这三种即可，可加入其它包entity等</li>
+<li>实体类需要序列化：数据需要传输，转换成二进制</li>
+<li>Alt insert 快捷生成；记得重写toString();</li>
+<li>类注释：/** 回车 ，ctrl+/</li>
+<li>开发技巧：面向过程，想到哪写到哪，然后进行重构！哈哈 比如登录方法返回String还是boolean（不要过度设计）</li>
+<li>dao层写接口，dao层里面新增impl 樱剖，继承接口写方法，Alt+Enter呼出</li>
+<li>commons整个项目通用；web下面：controller(servlet),filter,utils(针对web的工具类)，呼应了概念：高内聚，低耦合</li>
+<li>doGet doPost：<br>表面区别：明文、参数大小限制4Kb、可否传文件 POST是流传输<br>重要区别：  语义区别：get,获取数据；post，提交数据。2次请求，服务器能不能接收数据，可以的话才会传输。<br>幂等性：POST不具备幂等性。涉及 RestfulAPI。</li>
+</ul>
+<p>-代码技巧：对象+.+参数/方法+.var<br>-代码技巧：统一替换变量：双击：shift+F6<br>-代码技巧：代码格式化 ctrl+alt+L；注释和代码不可以在同一行。</p>
+<hr>
+<h4 id="bootstrap"><a href="#bootstrap" class="headerlink" title="bootstrap"></a>bootstrap</h4><ul>
+<li>学习简单框架：1天之内上手。</li>
+<li>复杂的框架或技术：3天之内上手。区块链也是可以3天之内入门的，入门不是指懂底层会解决方案，要会使用！！！</li>
+<li>来自Twitter，基于HTML CSS JavaScript。一个CSS/HTML框架。对于项目来说相当于一个插件plugins</li>
+<li>JQuery：一个JavaScript框架。简化JS开发，也是JS的新一代标准。</li>
+<li>概念：<br>技术选型：选择何种框架<br>1、框架的搜索量：搜索引擎-百度指数-添加对比词<br>2、bootstrap vue国人个人开发 angularjs谷歌开发<br>3、社区活跃度：涉及文档完备性，上GitHub，看收藏，也就是栈，超过1W就很厉害了。关注ISSUES<br>4、是否开源  </li>
+</ul>
+<h5 id="bootstrap表格"><a href="#bootstrap表格" class="headerlink" title="bootstrap表格"></a>bootstrap表格</h5><ul>
+<li>table :thead tbody tfoot  </li>
+<li>代码技巧：ctrl+W 按层级选中</li>
+<li>新建assets，新建plugins，贴bootstrap和js。新建自己的images，css，js</li>
+<li>新建h5文件。引入css theme.css js jQuery</li>
+<li>最大亮点：网格系统 Grid 说人话：定位的，布局的</li>
+<li>渐进增强：向上兼容 优雅降级：向下兼容</li>
+<li>页面布局演变：table布局-&gt;div+css-&gt;Grid网格布局<br>区别：表格布局问题:表格内容加载完毕才显示；div+css：代码从上往下执行，可以顺序加载；但调试难度大。<h5 id="字体图标"><a href="#字体图标" class="headerlink" title="字体图标"></a>字体图标</h5></li>
+<li>微软雅黑：一个字体一万，一万个字……字体是矢量的，无论放大缩小都不会失真。</li>
+<li>矢量图：不失真。</li>
+<li>为什么网站要图标：用户体验；概念：产品自己本身会说话。</li>
+<li>常用字体库/图标推荐：FontAwesome LineAwesome 符合现代气息，线性图标 socicon更符合现代气息</li>
+<li>Iconfont阿里巴巴矢量库</li>
+</ul>
+<h4 id="Log4j"><a href="#Log4j" class="headerlink" title="Log4j"></a>Log4j</h4><ul>
+<li>代码技巧： ==比较的地址 equals值 </li>
+<li>时间戳 类名 方法名 第几行 报错详情</li>
+</ul>
+<h4 id="spring特点"><a href="#spring特点" class="headerlink" title="spring特点"></a>spring特点</h4><ul>
+<li>非侵入式：pojo：源生java对象。概念：spring框架的API不会在业务逻辑中出现，即业务逻辑是pojo，由于业务逻辑中没有spring的API，所以业务逻辑可以从Spring框架快速移植到其他框架，即与环境无关。&nbsp; </li>
+<li>侵入式举例：一个javaweb项目，用到servlet，用pom maven构建的时候，还要用到servlet的api，servlet继承了httpservlet，才能实现功能。代码中出现了包下面的类。</li>
+<li>耦合度：降低耦合，</li>
+<li>容器：Tomcat是servlet容器。</li>
+<li>IOC：控制反转。  指传统上由程序代码操控的对象调用权交给 容器，通过容器来实现对象的装配和管理。控制反转就是对 对象控制权的转移，从程序代码本身反转到了外部容器。  </li>
+<li>自己的理解： 容器启动时，本来是由代码new的对象的时机及控制权交到容器，容器运行到需要的地方进行创建与释放。内存管理，因为java有gc，只管创建不管释放，C++需要手动释放，容器会比gc更好一些，可以优化gc机制导致的额外消耗。</li>
+<li>依赖注入是目前最优秀的解耦方式。 new对象就是一种耦合，属于硬编码  </li>
+<li>解耦等于控制反转？控制反转是一种方式，达到了解耦的效果。</li>
+</ul>
+<p>两种实现方式：<br>1.依赖注入：DI，Dependcy<br><br><br>2.依赖查找：一般不用。JNDI。</p>
+<ul>
+<li>AOP：面向对象编程OOP的补充，面向切面编程。允许通过 分离应用的业务逻辑与系统级服务(例如日志和事务管理)来进行开发。 </li>
+</ul>
+<p>#1111</p>
+<p>#2222</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/03/学习笔记/" data-id="ck0ge1h3z00040oujqadbvgpe" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-开发过程中的问题记录" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/03/开发过程中的问题记录/" class="article-date">
+  <time datetime="2019-09-03T13:19:30.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/03/开发过程中的问题记录/">开发过程中的问题记录</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>idea 2018.1</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/03/开发过程中的问题记录/" data-id="ck0ge1h4200060ouj1f8rgaaa" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-springBoot-mybaitis-thymeleaf开发环境搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/03/springBoot-mybaitis-thymeleaf开发环境搭建/" class="article-date">
+  <time datetime="2019-09-03T12:28:41.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/03/springBoot-mybaitis-thymeleaf开发环境搭建/">springBoot+mybaitis+thymeleaf开发环境搭建</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/03/springBoot-mybaitis-thymeleaf开发环境搭建/" data-id="ck0ge1h3t00010oujopugoov3" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-技能树一览" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2019/09/03/技能树一览/" class="article-date">
+  <time datetime="2019-09-03T12:20:44.000Z" itemprop="datePublished">2019-09-03</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2019/09/03/技能树一览/">技能树一览</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h2><ul>
+<li>操作系统：Linux </li>
+<li>代码管理：</li>
+<li>持续集成 CI/CD : jenkins</li>
+<li>java的项目管理工具： Maven/Gradle</li>
+</ul>
+<hr>
+<h2 id="框架"><a href="#框架" class="headerlink" title="框架"></a>框架</h2><h4 id="应用层"><a href="#应用层" class="headerlink" title="应用层"></a>应用层</h4><p><del>SSH:spring+structs+hibernate</del>  </p>
+<ul>
+<li><p>ssm： spring springMvc mybatis</p>
+</li>
+<li><p>springboot:开箱即用，简化开发，提高效率  约定优于配置的开发方式<br>学习小记：  </p>
+</li>
+<li><p>SpringBoot内嵌Servlet容器(第三方容器，Tomcat等)与Docker结合更大地提高开发、部署效率</p>
+</li>
+<li><p>Druid 数据源<br>mvnrepository.com/artifact/com.alibaba</p>
+</li>
+</ul>
+<p>Docker可以把mysql部署在Docker上</p>
+<p>整合tk.Mybatis 高效开发 对mybatis的二次封装<br>整合pageHelper 分页插件</p>
+<p>thymeleaf<br>动静态，支持html原型，增加额外属性来达到模板+静态数据的展示方式。<br>性能对比，beetl优于thymeleaf<br>low poly低多边形设计风格</p>
+<ul>
+<li><p>新建项目 选择thymeleaf依赖 </p>
+</li>
+<li><p>额外增加nekohtml -&gt;增加到pom文件 用于非标准HTML5 逃避结束符等检查</p>
+</li>
+<li><p>配置类型变更 application.yml<br>spring：<br>thymeleaf：<br>cache：false #开发时关闭缓存，否则无法看到实时页面<br>mode: LEAGACYHTML5<br>encoding: UTF-8<br>servlet:<br> content-type:text/html #servlet原来是jsp的，但springBoot的jar包不完全支持jsp</p>
+</li>
+<li><p>新建H5文件<br>增加thymeleaf引擎到H5首行标签</p>
+</li>
+</ul>
+<h4 id="消息中间件"><a href="#消息中间件" class="headerlink" title="消息中间件"></a>消息中间件</h4><ul>
+<li>MQ 消息队列</li>
+<li>RPC 远程通讯 RemoteProcedureCall gRpc谷歌 thrift dubbo阿里 SpringCloud</li>
+<li>ElasticSearch 数据库&amp;搜索引擎</li>
+</ul>
+<h4 id="数据库"><a href="#数据库" class="headerlink" title="数据库"></a>数据库</h4><ul>
+<li>SQL：MySQL / Postgre SQL</li>
+<li>NoSQL: Redis Memcached mongoDB elasticsearch</li>
+</ul>
+<hr>
+<h2 id="架构方面"><a href="#架构方面" class="headerlink" title="架构方面"></a>架构方面</h2><h4 id="分布式-微服务框架"><a href="#分布式-微服务框架" class="headerlink" title="分布式/微服务框架"></a>分布式/微服务框架</h4><ul>
+<li>SpringCloud springBoot+springCloud 组件多，功能完备，微服务架构解决方案 HTTP</li>
+<li>dubbo阿里 springBoot+dubbo+zookeeper 组件少，功能非完备。孵化项目，目前还属于RPC通讯框架 RPC</li>
+<li>rpc通信框架</li>
+</ul>
+<hr>
+<h4 id="虚拟化-容器化技术"><a href="#虚拟化-容器化技术" class="headerlink" title="虚拟化/容器化技术"></a>虚拟化/容器化技术</h4><ul>
+<li>Docker 容器化 一次构建，到处运行</li>
+<li>K8S 容器化的管理工具 容器集群 kubernetes</li>
+</ul>
+<hr>
+<h4 id="关注源码-性能"><a href="#关注源码-性能" class="headerlink" title="关注源码/性能"></a>关注源码/性能</h4><p>难度最高，学而有余时关注此领域</p>
+<ul>
+<li>JDK源码以及部分设计思想</li>
+<li>Spring源码</li>
+<li>JVM细节与排错</li>
+<li>高并发/高可用 偏大厂</li>
+</ul>
+<h4 id="微服务架构-一般会遇到什么问题？"><a href="#微服务架构-一般会遇到什么问题？" class="headerlink" title="微服务架构 一般会遇到什么问题？"></a>微服务架构 一般会遇到什么问题？</h4><p>开发方式是分布式系统开发<br>微服务：<br>高可用-&gt;第一步，即一直可用，部署多个A服务的副本，三台机器三个地址，<br>高并发，<br>高性能</p>
+<p>四大问题：<br>及额外的最大问题：网络不可靠，以此为大前提设计微服务</p>
+<p>1、客户端如何访问那么多的服务？</p>
+<p>ABC等多个服务，通过API网关，进行服务聚合</p>
+<p>2、服务与服务之间如何进行通信？<br>同步：</p>
+<ul>
+<li>http Apache Http Client</li>
+<li>RPC Dubbo(只支持java)<br>异步：<br>消息队列：比如 kafka RabbitMQ RocketMQ</li>
+</ul>
+<p>3、多服务如何管理？<br>服务治理：效果，知道服务及副本的上下线，防止高并发时产生阻塞，消耗性能。</p>
+<ul>
+<li>服务注册与发现<br>基于客户端的服务注册与发现 Zookeeper<br>基于服务端的服务注册与发现 springCloud的Eureka<br>4、服务挂了如何处理？<br>重试机制<br>服务熔断<br>服务降级<br>服务限流</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2019/09/03/技能树一览/" data-id="ck0ge1h4100050ouj9v6xga65" class="article-share-link">Share</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-hexo博客搭建过程记录" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2019/09/02/hexo博客搭建过程记录/" class="article-date">
@@ -102,7 +457,7 @@
 </ul>
 <hr>
 <ul>
-<li><p>新建文章命令<br>$ hexo new [layout] <title><br>新建一篇文章。如果没有设置 layout 的话，默认使用_config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</title></p>
+<li><p>新建文章命令<br>$ hexo new [layout] 文章名<br>新建一篇文章。如果没有设置 layout 的话，默认使用_config.yml 中的 default_layout 参数代替。如果标题包含空格的话，请使用引号括起来。</p>
 </li>
 <li><p>生成命令<br>hexo generate 或者 hexo g</p>
 </li>
@@ -115,8 +470,9 @@
 </li>
 <li><p>2.Github创建新仓库，仓库名称要和用户名一致，以io结尾<br>例如：用户名 JoLangldy 仓库名 JoLangldy.github.io</p>
 </li>
-<li><p>3.博客路径下找到_config.yaml文件，修改此部分</p>
-</li>
+</ul>
+<ul>
+<li>3.博客路径下找到_config.yaml文件，修改此部分</li>
 </ul>
 <p>deploy:<br>type: git<br>repo: <a href="https://github.com/JoLangldy/JoLangldy.github.io.git" target="_blank" rel="noopener">https://github.com/JoLangldy/JoLangldy.github.io.git</a><br>branch: master</p>
 <ul>
@@ -127,7 +483,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/09/02/hexo博客搭建过程记录/" data-id="ck03ssxh90001i4ujpb47skx0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/02/hexo博客搭建过程记录/" data-id="ck0ge1h3y00030oujtiyv73om" class="article-share-link">Share</a>
       
       
     </footer>
@@ -176,7 +532,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/30/hello-world/" data-id="ck03ssxh30000i4ujkcpk83em" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/08/30/hello-world/" data-id="ck0ge1h3m00000ouj09sjr6uc" class="article-share-link">Share</a>
       
       
     </footer>
@@ -217,11 +573,23 @@
       <ul>
         
           <li>
-            <a href="/2019/09/02/hexo博客搭建过程记录/">hexo博客搭建过程记录</a>
+            <a href="/2019/09/11/字节字符文件流的读与写/">字节字符文件流的读与写</a>
           </li>
         
           <li>
-            <a href="/2019/08/30/hello-world/">Hello World</a>
+            <a href="/2019/09/03/学习笔记/">学习笔记</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/开发过程中的问题记录/">开发过程中的问题记录</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/springBoot-mybaitis-thymeleaf开发环境搭建/">springBoot+mybaitis+thymeleaf开发环境搭建</a>
+          </li>
+        
+          <li>
+            <a href="/2019/09/03/技能树一览/">技能树一览</a>
           </li>
         
       </ul>

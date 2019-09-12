@@ -5,19 +5,19 @@
   
 
   
-  <title>Hello World | Jo ラングレー</title>
+  <title>字节字符文件流的读与写 | Jo ラングレー</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+  <meta name="description" content="分清字节流字符流涉及的类File类文件相关 InputStream 输入字节流衍生类  FileInputStream ByteArrayInputstream FilterInputream ObjectInputStream PipedInputStream SequenceInputStream  OutputStream 输出字节流 FileOutputStram ByteArrayOut">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hello World">
-<meta property="og:url" content="http://yoursite.com/2019/08/30/hello-world/index.html">
+<meta property="og:title" content="字节字符文件流的读与写">
+<meta property="og:url" content="http://yoursite.com/2019/09/11/字节字符文件流的读与写/index.html">
 <meta property="og:site_name" content="Jo ラングレー">
-<meta property="og:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta property="og:description" content="分清字节流字符流涉及的类File类文件相关 InputStream 输入字节流衍生类  FileInputStream ByteArrayInputstream FilterInputream ObjectInputStream PipedInputStream SequenceInputStream  OutputStream 输出字节流 FileOutputStram ByteArrayOut">
 <meta property="og:locale" content="cn">
-<meta property="og:updated_time" content="2019-08-30T09:37:25.068Z">
+<meta property="og:updated_time" content="2019-09-11T17:10:07.910Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hello World">
-<meta name="twitter:description" content="Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub. Quick">
+<meta name="twitter:title" content="字节字符文件流的读与写">
+<meta name="twitter:description" content="分清字节流字符流涉及的类File类文件相关 InputStream 输入字节流衍生类  FileInputStream ByteArrayInputstream FilterInputream ObjectInputStream PipedInputStream SequenceInputStream  OutputStream 输出字节流 FileOutputStram ByteArrayOut">
   
     <link rel="alternate" href="/atom.xml" title="Jo ラングレー" type="application/atom+xml">
   
@@ -64,10 +64,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-字节字符文件流的读与写" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2019/08/30/hello-world/" class="article-date">
-  <time datetime="2019-08-30T09:37:25.067Z" itemprop="datePublished">2019-08-30</time>
+    <a href="/2019/09/11/字节字符文件流的读与写/" class="article-date">
+  <time datetime="2019-09-11T15:51:59.000Z" itemprop="datePublished">2019-09-11</time>
 </a>
     
   </div>
@@ -78,7 +78,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Hello World
+      字节字符文件流的读与写
     </h1>
   
 
@@ -86,24 +86,46 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h2 id="分清字节流字符流涉及的类"><a href="#分清字节流字符流涉及的类" class="headerlink" title="分清字节流字符流涉及的类"></a>分清字节流字符流涉及的类</h2><h4 id="File类"><a href="#File类" class="headerlink" title="File类"></a>File类</h4><p>文件相关</p>
+<h4 id="InputStream-输入字节流"><a href="#InputStream-输入字节流" class="headerlink" title="InputStream 输入字节流"></a>InputStream 输入字节流</h4><p>衍生类<br></p>
+<ul>
+<li>FileInputStream<br></li>
+<li>ByteArrayInputstream<br></li>
+<li>FilterInputream<br></li>
+<li>ObjectInputStream<br></li>
+<li>PipedInputStream<br></li>
+<li>SequenceInputStream<br></li>
+</ul>
+<h4 id="OutputStream-输出字节流"><a href="#OutputStream-输出字节流" class="headerlink" title="OutputStream 输出字节流"></a>OutputStream 输出字节流</h4><ul>
+<li>FileOutputStram<br></li>
+<li>ByteArrayOutputStream<br></li>
+<li>FilterOutputStream<br></li>
+<li>ObjectOutputStream<br></li>
+<li>PipedOutputStream<br></li>
+</ul>
+<h4 id="Reader-输入字符流"><a href="#Reader-输入字符流" class="headerlink" title="Reader 输入字符流"></a>Reader 输入字符流</h4><ul>
+<li>BufferedReader</li>
+<li>CharArrayReader</li>
+<li>FilterReader</li>
+<li>InputStreamReader</li>
+<li>PipedStreamReader</li>
+<li>StringReader</li>
+</ul>
+<h4 id="Writer-输出字符流"><a href="#Writer-输出字符流" class="headerlink" title="Writer 输出字符流"></a>Writer 输出字符流</h4><ul>
+<li>BufferedWriter</li>
+<li>CharArrayWriter</li>
+<li>FilterWriter</li>
+<li>OutputStreamWriter</li>
+<li>PipedStreamWriter</li>
+<li>PrintWriter</li>
+<li>StringWriter</li>
+</ul>
+<p>关于字符流的特点：<br>每个字符流子类几乎都会有一个相对应的字节流子类，两者功能一样，差别只是在于操作的是字节还是字符</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/08/30/hello-world/" data-id="ck0ge1h3m00000ouj09sjr6uc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2019/09/11/字节字符文件流的读与写/" data-id="ck0ge1h3w00020ouj0ddr7vwv" class="article-share-link">Share</a>
       
       
     </footer>
@@ -112,15 +134,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2019/09/02/hexo博客搭建过程记录/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          hexo博客搭建过程记录
-        
-      </div>
-    </a>
   
+    <a href="/2019/09/03/学习笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">学习笔记</div>
+    </a>
   
 </nav>
 
